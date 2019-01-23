@@ -64,7 +64,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="145.70378"
+     inkscape:cx="-72.29622"
      inkscape:cy="43.304753"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -95,7 +95,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -191,17 +191,39 @@
            height="121.62236"
            x="-409.41483"
            y="41.712158" /></flowRegion><flowPara
-         id="flowPara841" /></flowRoot>    <text
-       id="text850"
-       y="-5.4586034"
-       x="-168.98497"
+         id="flowPara841" /></flowRoot>    <g
+       aria-label="LLIUREX"
+       transform="rotate(-45)"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.37483978px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#0c87d5;fill-opacity:1;stroke:none;stroke-width:0.20937097"
-       xml:space="preserve"
-       transform="rotate(-45)"><tspan
+       id="text850">
+      <path
+         d="m -168.08206,-5.4586034 v -7.1742276 h 1.52121 v 5.9180017 h 2.90993 v 1.2562259 z"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.04980755px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.20937097"
-         y="-5.4586034"
-         x="-168.98497"
-         id="tspan848"
-         sodipodi:role="line">LLIUREX</tspan></text>
+         id="path841" />
+      <path
+         d="m -162.40941,-5.4586034 v -7.1742276 h 1.52121 v 5.9180017 h 2.90993 v 1.2562259 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.04980755px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.20937097"
+         id="path843" />
+      <path
+         d="m -156.73677,-5.4586034 v -7.1742276 h 1.52121 v 7.1742276 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.04980755px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.20937097"
+         id="path845" />
+      <path
+         d="m -147.56043,-12.632831 v 4.6421472 q 0,0.7949555 -0.35822,1.3936257 -0.35331,0.5986701 -1.02559,0.9176338 -0.67228,0.3189636 -1.58991,0.3189636 -1.38381,0 -2.14933,-0.7066271 -0.76551,-0.7115342 -0.76551,-1.9432245 v -4.6225187 h 1.51631 v 4.3918834 q 0,0.8293054 0.33368,1.2169689 0.33369,0.3876635 1.10411,0.3876635 0.74588,0 1.07956,-0.3876635 0.3386,-0.3925706 0.3386,-1.2267831 v -4.3820692 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.04980755px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.20937097"
+         id="path847" />
+      <path
+         d="m -144.28247,-9.4481022 h 0.49072 q 0.72135,0 1.06485,-0.2404495 0.3435,-0.2404495 0.3435,-0.7556983 0,-0.510342 -0.35332,-0.726256 -0.3484,-0.215914 -1.08447,-0.215914 h -0.46128 z m 0,1.2365974 v 2.7529014 h -1.52121 v -7.1742276 h 2.09044 q 1.46233,0 2.16405,0.534877 0.70172,0.529971 0.70172,1.614447 0,0.6330199 -0.34841,1.1286403 -0.34841,0.4907133 -0.98633,0.7704199 1.61935,2.4192163 2.11006,3.1258434 h -1.68805 l -1.71259,-2.7529014 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.04980755px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.20937097"
+         id="path849" />
+      <path
+         d="m -135.03743,-5.4586034 h -4.1318 v -7.1742276 h 4.1318 v 1.246411 h -2.61059 v 1.57519 h 2.42903 v 1.2464117 h -2.42903 v 1.849989 h 2.61059 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.04980755px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.20937097"
+         id="path851" />
+      <path
+         d="m -127.73562,-5.4586034 h -1.73712 l -1.66843,-2.7136443 -1.66842,2.7136443 h -1.62917 l 2.37996,-3.699978 -2.22784,-3.4742496 h 1.67824 l 1.54575,2.581152 1.5163,-2.581152 h 1.63898 l -2.25237,3.5576709 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.04980755px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.20937097"
+         id="path853" />
+    </g>
   </g>
 </svg>

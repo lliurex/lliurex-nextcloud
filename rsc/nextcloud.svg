@@ -29,11 +29,11 @@
      borderlayer="true"
      units="px"
      showgrid="false"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="text850"
      inkscape:document-units="px"
-     inkscape:cy="-54.582485"
-     inkscape:cx="-12.991976"
-     inkscape:zoom="0.9899495"
+     inkscape:cy="-5.9518796"
+     inkscape:cx="-83.489326"
+     inkscape:zoom="1.979899"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -161,17 +161,41 @@
         </g>
       </g>
     </g>
-    <text
-       id="text850"
-       y="634.06488"
-       x="705.03107"
+    <g
+       aria-label="LLIUREX"
+       transform="rotate(43.39902)"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.74514008px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#0c87d5;fill-opacity:1;stroke:none;stroke-width:0.56862843"
-       xml:space="preserve"
-       transform="rotate(43.39902)"><tspan
+       id="text850">
+      <path
+         d="m 707.48328,634.06488 v -19.48441 h 4.13144 v 9.99427 6.07837 h 7.90304 v 3.41177 z"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.29416084px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.56862843"
-         y="634.06488"
-         x="705.03107"
-         id="tspan848"
-         sodipodi:role="line">LLIUREX</tspan></text>
+         id="path833"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccc" />
+      <path
+         d="m 722.88955,634.06488 v -19.48441 h 4.13144 v 16.07264 h 7.90305 v 3.41177 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.29416084px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.56862843"
+         id="path835" />
+      <path
+         d="m 738.29583,634.06488 v -19.48441 h 4.13144 v 19.48441 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.29416084px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.56862843"
+         id="path837" />
+      <path
+         d="m 763.21774,614.58047 v 12.60756 q 0,2.15901 -0.97289,3.78493 -0.95956,1.62593 -2.78539,2.4922 -1.82583,0.86626 -4.31802,0.86626 -3.75828,0 -5.83732,-1.91912 -2.07905,-1.93244 -2.07905,-5.27758 v -12.55425 h 4.11811 v 11.92787 q 0,2.2523 0.90625,3.30515 0.90626,1.05286 2.99863,1.05286 2.02574,0 2.93199,-1.05286 0.91958,-1.06617 0.91958,-3.3318 v -11.90122 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.29416084px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.56862843"
+         id="path839" />
+      <path
+         d="m 772.12033,623.22984 h 1.33272 q 1.9591,0 2.89201,-0.65303 0.93291,-0.65303 0.93291,-2.05239 0,-1.38603 -0.95957,-1.97243 -0.94623,-0.5864 -2.94531,-0.5864 h -1.25276 z m 0,3.35847 v 7.47657 h -4.13144 v -19.48441 h 5.6774 q 3.97151,0 5.8773,1.45267 1.9058,1.43934 1.9058,4.38466 0,1.71921 -0.94624,3.06526 -0.94623,1.33272 -2.67877,2.09238 4.39799,6.57032 5.73071,8.48944 h -4.58457 l -4.6512,-7.47657 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.29416084px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.56862843"
+         id="path841" />
+      <path
+         d="M 797.22883,634.06488 H 786.0073 v -19.48441 h 11.22153 v 3.38512 h -7.09009 v 4.27804 h 6.59698 v 3.38512 h -6.59698 v 5.02436 h 7.09009 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.29416084px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.56862843"
+         id="path843" />
+      <path
+         d="m 817.05974,634.06488 h -4.71784 l -4.53126,-7.36996 -4.53126,7.36996 h -4.42464 l 6.46371,-10.04873 -6.05056,-9.43568 h 4.55791 l 4.19808,7.01013 4.11811,-7.01013 h 4.45129 l -6.11719,9.66224 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.29416084px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0c87d5;fill-opacity:1;stroke-width:0.56862843"
+         id="path845" />
+    </g>
   </g>
 </svg>
