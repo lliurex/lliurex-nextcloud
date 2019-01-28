@@ -106,7 +106,7 @@ class NextCloud:
 
 		self.window.set_name("WHITE_BACKGROUND")
 		self.progress_window.set_name("WHITE_BACKGROUND")
-		#self.msg_label.set_name("HEADER-LABEL")
+		self.msg_label.set_name("MSG-LABEL")
 		self.pbar_label.set_name("HEADER-LABEL")
 
 		for entry in self.blocks_list:
