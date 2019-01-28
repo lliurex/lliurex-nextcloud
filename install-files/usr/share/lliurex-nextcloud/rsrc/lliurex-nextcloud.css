@@ -34,6 +34,12 @@
 	
 }
 
+#MSG-LABEL
+{
+	font: 10.5pt Quattrocento Sans Bold;
+	color:@arc-blue;
+
+}
 #HEADER-LABEL
 {
 	color: @arc-blue;
