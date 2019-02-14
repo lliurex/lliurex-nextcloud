@@ -3,4 +3,4 @@ type=python
 path=LliurexNextcloud.py
 class=LliurexNextcloud
 [METHODS]
-initialize_nextcloud=adm,admins
+initialize_nextcloud=sudo,admins
