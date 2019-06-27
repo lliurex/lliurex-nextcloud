@@ -1,3 +1,9 @@
+lliurex-nextcloud (0.4) bionic; urgency=medium
+
+  * Added icon
+
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Thu, 27 Jun 2019 12:57:19 +0200
+
 lliurex-nextcloud (0.3) bionic; urgency=medium
 
   * Changed adm group by sudo
