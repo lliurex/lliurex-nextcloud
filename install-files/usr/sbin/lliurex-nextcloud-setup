@@ -1,14 +1,15 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*
 
 import os
-import xmlrpclib
+import xmlrpc.client as client
 import gi
 gi.require_version('Gtk','3.0')
 gi.require_version('PangoCairo','1.0')
 from gi.repository import Gtk, Gdk, GObject, GLib, Gio, PangoCairo, Pango
 import threading
 import pwd
+import ssl
 
 import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
@@ -207,9 +208,9 @@ class NextCloud:
 	
 	def execute(self):
 		
-		
+		context=ssl._create_unverified_context()
 		ip="server"
-		c=xmlrpclib.ServerProxy("https://%s:9779"%ip)
+		c=client.ServerProxy("https://%s:9779"%ip,context=context,allow_none=True)
 		n4d_key=self.get_n4d_key()
 		self.ret_status,self.ret_msg=c.initialize_nextcloud(n4d_key,"LliurexNextcloud",self.template)
 		
