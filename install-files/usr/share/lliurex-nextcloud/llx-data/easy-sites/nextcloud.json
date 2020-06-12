@@ -1,0 +1,16 @@
+{
+    "linkid":"nextcloud",
+    "link":"https://nextcloud",
+    "icon":"nextcloud.png",
+    "fonticon":"icon-cloud",
+    "name": {
+        "default":"nextcloud",
+        "valencia":"nextcloud",
+        "es":"nextcloud"
+    },
+    "description": {
+        "default":"Storing documents in a private cloud",
+        "valencia":"Emmagatzemament de documents en un núvol privada",
+        "es":"Almacenamiento de documentos en una nube privada"
+    }
+}

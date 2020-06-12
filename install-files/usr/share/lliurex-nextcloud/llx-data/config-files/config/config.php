@@ -1,0 +1,31 @@
+<?php
+$CONFIG = array (
+  'updatechecker' => false,
+  'instanceid' => 'ocntcyhrwg8x',
+  'passwordsalt' => 'OmGUcPR4JOXG+Vm8xtOQ85kFIOBE8Y',
+  'secret' => 'cuHNdJpqyGtw6jd5A6KTgUbE64zKCktcUpIndPSHZRZFOC2U',
+  'trusted_domains' => 
+  array (
+    0 => 'server',
+    1 => '{{ SRV_IP }}',
+    2 => 'nextcloud',
+    3 => '{{ EXTERNAL_IP }}',
+  ),
+  'datadirectory' => '/var/www/nextcloud/data',
+  'dbtype' => 'mysql',
+  'version' => '15.0.2.0',
+  'overwrite.cli.url' => 'http://{{ SRV_IP }}/nextcloud',
+  'dbname' => '{{ DB_NAME }}',
+  'dbhost' => 'localhost',
+  'dbport' => '',
+  'dbtableprefix' => 'oc_',
+  'mysql.utf8mb4' => true,
+  'dbuser' => '{{ DB_USER }}',
+  'dbpassword' => '{{ DB_PWD }}',
+  'installed' => true,
+  'ldapIgnoreNamingRules' => false,
+  'ldapProviderFactory' => 'OCA\\User_LDAP\\LDAPProviderFactory',
+  'forcessl' => true,
+  'theme' => 'lliurex',
+  'default_language' => '{{ DEFAULT_LOCALE }}', 
+);

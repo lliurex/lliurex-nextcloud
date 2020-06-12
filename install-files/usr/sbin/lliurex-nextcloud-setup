@@ -37,11 +37,31 @@ class NextCloud:
 		
 		builder=Gtk.Builder()
 		builder.set_translation_domain("lliurex-nextcloud")
-		builder.add_from_file(RSRC_PATH+"lliurex-nextcloud-setup.glade")
+		builder.add_from_file(RSRC_PATH+"lliurex-nextcloud-setup.ui")
 		
-		self.window=builder.get_object("window1")
+		max_height=Gdk.Display.get_default().get_monitor(0).get_geometry().height
+		width=Gdk.Display.get_default().get_monitor(0).get_geometry().width
+
+		self.stack_window=Gtk.Stack()
+		self.stack_window.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT)
+		self.stack_window.set_margin_top(0)
+		self.stack_window.set_margin_bottom(0)
+
+		self.main_window=builder.get_object("main_window")
+		self.main_window.set_title("NextCloud Setup")
+		self.main_window.resize(400,815)
+		g=Gdk.Geometry()
+		g.min_width=400
+		g.max_width=400
+		g.min_height=200
+		g.max_height=max_height
+		self.main_window.set_geometry_hints(None,g,Gdk.WindowHints.MAX_SIZE)
+		self.main_box=builder.get_object("main_box")
+		self.banner_box=builder.get_object("banner_box")
+		self.options_box=builder.get_object("options_box")
+
+
 		self.accept_button=builder.get_object("accept_button")
-		self.cancel_button=builder.get_object("cancel_button")
 		self.dbname_entry=builder.get_object("dbname_entry")
 		self.dbuser_entry=builder.get_object("dbuser_entry")
 		self.dbpwd_entry=builder.get_object("dbpwd_entry")
@@ -50,21 +70,23 @@ class NextCloud:
 		self.pwd_entry=builder.get_object("pwd_entry")
 		self.pwd_entry2=builder.get_object("pwd_entry2")
 		self.entry_list=[self.dbname_entry,self.dbuser_entry,self.dbpwd_entry,self.dbpwd_entry2,self.user_entry,self.pwd_entry,self.pwd_entry2]
+		
+		self.progressbar=builder.get_object("progressbar")
 		self.msg_label=builder.get_object("msg_label")
 
+		self.stack_window.add_titled(self.options_box, "optionsBox", "Options Box")
+		self.stack_window.show_all()
+		self.main_box.pack_start(self.stack_window,True,True,0)
+		self.progressbar.hide()
 		
-		self.window.connect("destroy",self.exit)
+		self.main_window.connect("destroy",self.exit)
 		self.accept_button.connect("clicked",self.accept_clicked)
-		self.cancel_button.connect("clicked",self.exit)
 		
+		'''
 		self.progress_window=builder.get_object("window2")
 		self.pbar=builder.get_object("progressbar")
-		
+		'''
 
-		self.window.show()
-		
-		
-		
 		database_label=builder.get_object("database_label")
 		database_separator=builder.get_object("database_separator")
 		dbname_label=builder.get_object("dbname_label")
@@ -84,7 +106,12 @@ class NextCloud:
 		
 		self.set_defaults()
 		self.set_css_info()
+		self.get_session_locale()
 		
+		self.main_window.show()
+		self.stack_window.set_transition_type(Gtk.StackTransitionType.NONE)
+		self.stack_window.set_visible_child_name("optionsBox")
+
 		Gtk.main()
 		
 	#def start_gui
@@ -105,10 +132,11 @@ class NextCloud:
 		Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(),self.style_provider,Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 		
 
-		self.window.set_name("WHITE_BACKGROUND")
-		self.progress_window.set_name("WHITE_BACKGROUND")
+		self.main_window.set_name("WHITE_BACKGROUND")
+		self.banner_box.set_name("BANNER-BOX")
+		#self.progress_window.set_name("WHITE_BACKGROUND")
 		self.msg_label.set_name("MSG-LABEL")
-		self.pbar_label.set_name("HEADER-LABEL")
+		self.progressbar.set_name("HEADER-LABEL")
 
 		for entry in self.blocks_list:
 			entry.set_name("HEADER-LABEL")
@@ -124,6 +152,28 @@ class NextCloud:
 	
 			
 	#def set_css_info
+
+	def init_threads(self):
+
+		self.setup_t=threading.Thread(target=self.execute,args=())
+		self.setup_t.daemon=True
+		GObject.threads_init()
+
+	#def init_threads
+
+
+	def get_session_locale(self):
+
+		lang=os.environ["LANG"]
+
+		if 'ca' in lang:
+			self.default_locale="ca@valencia"
+		elif 'es' in lang:
+				self.default_locale="es"
+		else:
+			self.default_locale="en"
+
+	#def get_session_locale				
 	
 	def exit(self,widget):
 		
@@ -143,6 +193,9 @@ class NextCloud:
 		self.template["ADMIN_USER"]=self.user_entry.get_text()
 		self.template["ADMIN_PWD"]=self.pwd_entry.get_text()
 		self.template["ADMIN_PWD2"]=self.pwd_entry2.get_text()
+
+		self.template["DEFAULT_LOCALE"]=self.default_locale
+
 		
 		
 	#def get_values
@@ -153,7 +206,9 @@ class NextCloud:
 		self.get_values()
 		ret,msg=self.parse_values()
 		if not ret:
-			self.msg_label.set_markup("<span foreground='red'>"+msg+"</span>")
+			msg_text=self.get_msg(msg)
+			self.msg_label.set_markup("<span foreground='red'>"+msg_text+"</span>")
+			#self.msg_label.set_markup("<span foreground='red'>"+msg+"</span>")
 			return
 			
 		'''	
@@ -174,14 +229,25 @@ class NextCloud:
 		
 		self.executing=True
 		
-		self.progress_window.show()
+		#self.progress_window.show()
+		self.options_box.set_sensitive(False)
+		self.progressbar.show()
+		self.msg_label.show()
+		self.msg_label.set_text(_("Initializing Lliurex NextCloud. Wait a moment..."))
 		
-		GLib.timeout_add(50,self.pulsate)
 		self.ret_msg=""
 		self.ret_status=False
+		self.init_threads()
+
+		'''
 		t=threading.Thread(target=self.execute,args=())
 		t.daemon=True
 		t.start()
+		'''
+
+		self.setup_t.start()
+		GLib.timeout_add(50,self.pulsate)
+
 		
 		
 	#def accept_clicked
@@ -190,15 +256,24 @@ class NextCloud:
 		
 		
 		if self.executing:	
-			self.pbar.pulse()
+			self.progressbar.pulse()
 		else:
-			
+			self.options_box.set_sensitive(True)
 			if self.ret_status:
 				os.system("zero-center set-configured lliurex-nextcloud")
+				msg_text=self.get_msg("14")
+				self.msg_label.set_text(msg_text)
+
+				'''
 				self.msg_label.set_markup("<b>"+_("Initialization successful")+"</b>")
 				self.accept_button.set_sensitive(False)
+				'''
 			else:
+				msg_text=self.get_msg(self.ret_msg)
+				self.msg_label.set_markup("<span foreground='red'>"+msg_text+"</span>")
+				'''
 				self.msg_label.set_markup("<span foreground='red'>"+self.ret_msg+"</span>")
+				'''
 				os.system("zero-center set-failed lliurex-nextcloud")		
 
 		return self.executing
@@ -216,7 +291,7 @@ class NextCloud:
 		
 		
 		self.executing=False
-		self.progress_window.hide()
+		self.progressbar.hide()
 		
 		return False
 		
@@ -239,17 +314,54 @@ class NextCloud:
 		
 		for item in self.template:
 			if self.template[item]=="" or self.template[item]==None:
-				return [False,"There are empty fields to be completed"]
+				return [False,"11"]
 				
 		if self.template["DB_PWD"]!=self.template["DB_PWD2"]:
-			return [False,"DB Passwords do not match"]
+			return [False,"12"]
 			
 		if self.template["ADMIN_PWD"]!=self.template["ADMIN_PWD2"]:
-			return [False,"Administrator passwords do not match"]
+			return [False,"13"]
 			
 		return [True,""]
 		
 	#def parse_values
+
+
+	def get_msg(self,code):
+
+		if code=="1":
+			msg=_("Error loading or processing template")
+		elif code=="2":
+			msg=_("Unable to get NextCloud version")
+		elif code=="3":
+			msg=_("Error initializing mysql service")
+		elif code=="4":
+			msg=_("Error creating user to database")
+		elif code=="5":
+			msg=_("Error creating database")
+		elif code=="6":
+			msg=_("Error cleaning old files")
+		elif code=="7":
+			msg=_("Error copyng news files")
+		elif code=="8":
+			msg=_("Error processing config file")
+		elif code=="9":
+			msg=_("Error enabling easy-site")
+		elif code=="10":
+			msg=_("Error enabling NextCloud cname")
+		elif code=="?":
+			msg=_("Error in NextCloud config process")
+		elif code=="11":
+			msg=_("There are empty fields to be completed")	
+		elif code=="12":
+			msg=_("DB Passwords do not match")	
+		elif code=="13":
+			msg=_("Administrator passwords do not match")
+		elif code=="14":
+			msg=_("Initialization successful")
+		return msg											
+
+	#def get_msg	
 	
 #class owncloud
 

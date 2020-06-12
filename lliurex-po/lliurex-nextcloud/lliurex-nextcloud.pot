@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-21 14:41+0100\n"
+"POT-Creation-Date: 2020-06-12 12:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,50 +17,106 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:7
-msgid "LliureX Nextcloud"
+#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:7
+msgid "Lliurex NextCloud Configuration"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:61
+#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:110
 msgid "Database"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:100
+#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:149
 msgid "DB Name"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:124
+#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:173
 msgid "DB User"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:148
+#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:197
 msgid "DB Password"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:173
+#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:222
 msgid "Repeat DB password"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:226
-msgid "Nextcloud administrator"
+#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:272
+msgid "NextCloud administrator"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:264
+#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:310
 msgid "User"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:288
+#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:345
 msgid "Password"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:313
+#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:370
 msgid "Repeat password"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.glade:454
-msgid "Initializing..."
+#: /tmp/lliurex-nextcloud.py:229
+msgid "Initializing Lliurex NextCloud. Wait a moment..."
 msgstr ""
 
-#: /tmp/lliurex-nextcloud.py:197
+#: /tmp/lliurex-nextcloud.py:326
+msgid "Error loading or processing template"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:328
+msgid "Unable to get NextCloud version"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:330
+msgid "Error initializing mysql service"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:332
+msgid "Error creating user to database"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:334
+msgid "Error creating database"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:336
+msgid "Error cleaning old files"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:338
+msgid "Error copyng news files"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:340
+msgid "Error processing config file"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:342
+msgid "Error enabling easy-site"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:344
+msgid "Error enabling NextCloud cname"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:346
+msgid "Error in NextCloud config process"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:348
+msgid "There are empty fields to be completed"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:350
+msgid "DB Passwords do not match"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:352
+msgid "Administrator passwords do not match"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:354
 msgid "Initialization successful"
 msgstr ""

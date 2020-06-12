@@ -1412,7 +1412,7 @@ CREATE TABLE `oc_preferences` (
 
 LOCK TABLES `oc_preferences` WRITE;
 /*!40000 ALTER TABLE `oc_preferences` DISABLE KEYS */;
-INSERT INTO `oc_preferences` VALUES ('{{ ADMIN_USER }}','avatar','generated','true'),('{{ ADMIN_USER }}','core','lang','es'),('{{ ADMIN_USER }}','core','locale','es_ES'),('{{ ADMIN_USER }}','core','timezone','Europe/Madrid'),('{{ ADMIN_USER }}','files_external','config_version','0.5.0'),('{{ ADMIN_USER }}','firstrunwizard','show','0');
+INSERT INTO `oc_preferences` VALUES ('{{ ADMIN_USER }}','avatar','generated','true'),('{{ ADMIN_USER }}','core','lang','{{ DEFAULT_LANG }}'),('{{ ADMIN_USER }}','core','locale','es_ES'),('{{ ADMIN_USER }}','core','timezone','Europe/Madrid'),('{{ ADMIN_USER }}','files_external','config_version','0.5.0'),('{{ ADMIN_USER }}','firstrunwizard','show','0');
 /*!40000 ALTER TABLE `oc_preferences` ENABLE KEYS */;
 UNLOCK TABLES;
 
