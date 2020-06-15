@@ -162,6 +162,7 @@ class LliurexNextcloud:
 			self._debug(msg)
 			return [False,""]						
 
+		return [True,""]	
 	#def get_nextcloud_version	
 
 	
@@ -421,7 +422,7 @@ class LliurexNextcloud:
 			if not status:
 				return [False,"1"]
 
-			status,self.get_nextcloud_version()
+			status,ret=self.get_nextcloud_version()
 			if not status:
 				return [False,"2"]
 
