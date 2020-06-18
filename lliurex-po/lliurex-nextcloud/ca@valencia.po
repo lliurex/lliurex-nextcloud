@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-12 12:17+0200\n"
-"PO-Revision-Date: 2020-06-12 12:25+0200\n"
+"PO-Revision-Date: 2020-06-18 16:13+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ca@valencia\n"
@@ -59,65 +59,64 @@ msgstr "Repetix la contrasenya"
 
 #: /tmp/lliurex-nextcloud.py:229
 msgid "Initializing Lliurex NextCloud. Wait a moment..."
-msgstr ""
+msgstr "S'està inicialitzant LliureX Nextcloud. Espere un moment..."
 
 #: /tmp/lliurex-nextcloud.py:326
 msgid "Error loading or processing template"
-msgstr ""
+msgstr "Error en carregar o processar la plantilla"
 
 #: /tmp/lliurex-nextcloud.py:328
 msgid "Unable to get NextCloud version"
-msgstr ""
+msgstr "No és possible determinar la versió de Nextcloud"
 
 #: /tmp/lliurex-nextcloud.py:330
 msgid "Error initializing mysql service"
-msgstr ""
+msgstr "Error en inicialitzar el servei de mysql"
 
 #: /tmp/lliurex-nextcloud.py:332
 msgid "Error creating user to database"
-msgstr ""
+msgstr "Error en crear l'usuari de base de dades"
 
 #: /tmp/lliurex-nextcloud.py:334
 msgid "Error creating database"
-msgstr ""
+msgstr "Error en crear la base de dades"
 
 #: /tmp/lliurex-nextcloud.py:336
 msgid "Error cleaning old files"
-msgstr ""
+msgstr "Error en esborrar els fitxers antics"
 
 #: /tmp/lliurex-nextcloud.py:338
 msgid "Error copyng news files"
-msgstr ""
+msgstr "Error en copiar els nous fitxers"
 
 #: /tmp/lliurex-nextcloud.py:340
 msgid "Error processing config file"
-msgstr ""
+msgstr "Error en processar el fitxer de configuració"
 
 #: /tmp/lliurex-nextcloud.py:342
 msgid "Error enabling easy-site"
-msgstr ""
+msgstr "Error en activar el easy-site"
 
 #: /tmp/lliurex-nextcloud.py:344
 msgid "Error enabling NextCloud cname"
-msgstr ""
+msgstr "Error en activar el  cname de Nextcloud"
 
 #: /tmp/lliurex-nextcloud.py:346
 msgid "Error in NextCloud config process"
-msgstr ""
+msgstr "Error en el procés de configuració de Nextcloud"
 
 #: /tmp/lliurex-nextcloud.py:348
 msgid "There are empty fields to be completed"
-msgstr ""
+msgstr "Hi ha camps buits que cal completar"
 
 #: /tmp/lliurex-nextcloud.py:350
 msgid "DB Passwords do not match"
-msgstr ""
+msgstr "Les contrasenyes per a la base de dades no coincideixen"
 
 #: /tmp/lliurex-nextcloud.py:352
 msgid "Administrator passwords do not match"
-msgstr ""
+msgstr "Les contrasenyes per a l'Administrador no coincideixen"
 
 #: /tmp/lliurex-nextcloud.py:354
 msgid "Initialization successful"
 msgstr "Inicialització satisfactòria"
-
