@@ -32,8 +32,8 @@ class LliurexNextcloud:
 	
 	NEXTCLOUD_DATA_DIR="/var/www/nextcloud/data/"
 	NEXTCLOUD_CONFIG_DIR="/var/www/nextcloud/config/"
-	EASY_SITES_DIR="/var/www/srv/links/"
-	EASY_SITES_DIR_ICON="/var/www/srv/icons/"
+	EASY_SITES_DIR="/var/lib/lliurex-www/links/"
+	EASY_SITES_DIR_ICON="/usr/share/lliurex-www/srv/icons/"
 	
 	
 	
