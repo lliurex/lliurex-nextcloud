@@ -357,6 +357,8 @@ class LliurexNextcloud:
 		try:
 			if os.path.exists(LliurexNextcloud.EASY_SITES_DIR):
 				shutil.copy(LliurexNextcloud.EASY_SITE,LliurexNextcloud.EASY_SITES_DIR)
+				cmd="chown www-data:www-data %s"%(os.path.join(LliurexNextcloud.EASY_SITES_DIR,"nextcloud.json"))
+				os.system(cmd)
 				
 			if os.path.exists(LliurexNextcloud.EASY_SITES_DIR_ICON):
 				shutil.copy(LliurexNextcloud.EASY_SITE_ICON,LliurexNextcloud.EASY_SITES_DIR_ICON)	
