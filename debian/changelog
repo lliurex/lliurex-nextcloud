@@ -1,3 +1,10 @@
+lliurex-nextcloud (0.7) bionic; urgency=medium
+
+  * Added support to setup nextcloud 19.0.1
+  * Improved performance of gui
+
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Fri, 17 Jul 2020 13:42:43 +0200
+
 lliurex-nextcloud (0.6) bionic; urgency=medium
 
   * Add server alias for lliurex domain
