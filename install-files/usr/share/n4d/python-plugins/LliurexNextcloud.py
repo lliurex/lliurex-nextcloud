@@ -12,6 +12,8 @@ from jinja2 import Template
 
 class LliurexNextcloud:
 	
+	ORIG_VERSION="15.0.2"
+	UPDATE_VERSION="19.0.1"
 	BASE_DIR="/usr/share/lliurex-nextcloud/"
 	NEXTCLOUD_BASE_DIR=BASE_DIR+"llx-data/"
 	NEXTCLOUD_BASE_CONFIG_DIR=NEXTCLOUD_BASE_DIR+"config-files/"
@@ -27,7 +29,7 @@ class LliurexNextcloud:
 	SQL_TEMPLATE_19="nextcloud19.sql"
 	EASY_SITE_FILES=NEXTCLOUD_BASE_DIR+"easy-sites/"
 	EASY_SITE=EASY_SITE_FILES+"nextcloud.json"
-	EASY_SITE_ICON=EASY_SITE_FILES+"nextcloud.png"
+	EASY_SITE_ICON=EASY_SITE_FILES+"nextcloud.svg"
 	#CNAME="cname-owncloud"
 	
 	NEXTCLOUD_DATA_DIR="/var/www/nextcloud/data/"
@@ -151,10 +153,10 @@ class LliurexNextcloud:
 
 					for line in buf:
 						if '$OC_VersionString' in line:
-							if '15.0.2'	in line:
+							if LliurexNextcloud.ORIG_VERSION in line:
 								self.nextcloud_version='15'
 								break
-							elif '19.0.0' in line:
+							elif LliurexNextcloud.UPDATE_VERSION  in line:
 								self.nextcloud_version='19'
 								break
 		except Exception as e:

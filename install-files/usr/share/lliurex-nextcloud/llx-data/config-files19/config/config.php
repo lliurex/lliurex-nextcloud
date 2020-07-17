@@ -1,9 +1,9 @@
 <?php
 $CONFIG = array (
   'updatechecker' => false,
-  'instanceid' => 'ocntcyhrwg8x',
-  'passwordsalt' => 'OmGUcPR4JOXG+Vm8xtOQ85kFIOBE8Y',
-  'secret' => 'cuHNdJpqyGtw6jd5A6KTgUbE64zKCktcUpIndPSHZRZFOC2U',
+  'instanceid' => 'oc2t9y66hlez',
+  'passwordsalt' => 'gdDQina5ZL16BbsdpmZKekC3JhFOda',
+  'secret' => 'LLWxreHNl3zfYfRAcxhYDN1L1H/WErkdcyBTjX0nJV3PuFZt',
   'trusted_domains' => 
   array (
     0 => 'server',
@@ -13,7 +13,7 @@ $CONFIG = array (
   ),
   'datadirectory' => '/var/www/nextcloud/data',
   'dbtype' => 'mysql',
-  'version' => '19.0.0.12',
+  'version' => '19.0.1.1',
   'overwrite.cli.url' => 'http://{{ SRV_IP }}/nextcloud',
   'dbname' => '{{ DB_NAME }}',
   'dbhost' => 'localhost',

@@ -3,9 +3,9 @@
     "link":"https://nextcloud",
     "icon":"nextcloud.svg",
     "name": {
-        "default":"nextcloud",
-        "valencia":"nextcloud",
-        "es":"nextcloud"
+        "default":"Nextcloud",
+        "valencia":"Nextcloud",
+        "es":"Nextcloud"
     },
     "description": {
         "default":"Storing documents in a private cloud",
