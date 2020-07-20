@@ -1,3 +1,9 @@
+lliurex-nextcloud (0.7.1) bionic; urgency=medium
+
+  * Disabled debug mode
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Mon, 20 Jul 2020 11:54:16 +0200
+
 lliurex-nextcloud (0.7) bionic; urgency=medium
 
   * Added support to setup nextcloud 19.0.1
