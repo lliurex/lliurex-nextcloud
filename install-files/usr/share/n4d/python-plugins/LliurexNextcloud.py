@@ -52,7 +52,7 @@ class LliurexNextcloud:
 	'''
 	def __init__(self):
 	
-		self.dbg=1
+		self.dbg=0
 		self.template=None
 		self.template_vars=["DB_USER","DB_PWD","DB_NAME","ADMIN_USER","ADMIN_PWD","DEFAULT_LOCALE"]
 		
