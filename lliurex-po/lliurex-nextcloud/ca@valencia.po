@@ -58,8 +58,8 @@ msgid "Repeat password"
 msgstr "Repetix la contrasenya"
 
 #: /tmp/lliurex-nextcloud.py:229
-msgid "Initializing Lliurex NextCloud. Wait a moment..."
-msgstr "S'està inicialitzant LliureX Nextcloud. Espere un moment..."
+msgid "Initializing NextCloud. Wait a moment..."
+msgstr "S'està inicialitzant Nextcloud. Espere un moment..."
 
 #: /tmp/lliurex-nextcloud.py:326
 msgid "Error loading or processing template"
