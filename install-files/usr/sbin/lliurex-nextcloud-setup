@@ -62,6 +62,7 @@ class NextCloud:
 
 
 		self.accept_button=builder.get_object("accept_button")
+		self.help_button=builder.get_object("help_button")
 		self.dbname_entry=builder.get_object("dbname_entry")
 		self.dbuser_entry=builder.get_object("dbuser_entry")
 		self.dbpwd_entry=builder.get_object("dbpwd_entry")
@@ -81,7 +82,7 @@ class NextCloud:
 		
 		self.main_window.connect("destroy",self.exit)
 		self.accept_button.connect("clicked",self.accept_clicked)
-		
+		self.help_button.connect("clicked",self.show_help)
 		'''
 		self.progress_window=builder.get_object("window2")
 		self.pbar=builder.get_object("progressbar")
@@ -157,6 +158,9 @@ class NextCloud:
 
 		self.setup_t=threading.Thread(target=self.execute,args=())
 		self.setup_t.daemon=True
+		self.open_help_t=threading.Thread(target=self.open_help)
+		self.open_help_t.daemon=True
+
 		GObject.threads_init()
 
 	#def init_threads
@@ -233,7 +237,7 @@ class NextCloud:
 		self.options_box.set_sensitive(False)
 		self.progressbar.show()
 		self.msg_label.show()
-		self.msg_label.set_text(_("Initializing Lliurex NextCloud. Wait a moment..."))
+		self.msg_label.set_text(_("Initializing NextCloud. Wait a moment..."))
 		
 		self.ret_msg=""
 		self.ret_status=False
@@ -361,9 +365,38 @@ class NextCloud:
 			msg=_("Initialization successful")
 		return msg											
 
-	#def get_msg	
+	#def get_msg
+
+	def show_help(self,widget):
+
+		run_pkexec=False
+		
+		if "PKEXEC_UID" in os.environ:
+			run_pkexec=True
+		
+		if 'ca-es' in self.default_locale:
+			cmd='xdg-open https://wiki.edu.gva.es/lliurex/tiki-index.php?page=Inicialitzaci%C3%B3-de-Nextcloud'
+		else:
+			cmd='xdg-open https://wiki.edu.gva.es/lliurex/tiki-index.php?page=Inicializaci%C3%B3n-de-Nextcloud'
+
+		if not run_pkexec:
+			self.help_cmd="su -c '%s' $USER" %cmd
+		else:
+			user=pwd.getpwuid(int(os.environ["PKEXEC_UID"])).pw_name
+			self.help_cmd="su -c '" +cmd+ "' "+ user
+
+		self.init_threads()
+		self.open_help_t.start()
 	
-#class owncloud
+	#def show_help
+
+	def open_help(self):
+
+		os.system(self.help_cmd)
+
+	#def open_help	
+	
+#class nextcloud
 
 if __name__=="__main__":
 	

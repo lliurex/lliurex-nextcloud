@@ -58,7 +58,7 @@ msgid "Repeat password"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:229
-msgid "Initializing Lliurex NextCloud. Wait a moment..."
+msgid "Initializing NextCloud. Wait a moment..."
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:326

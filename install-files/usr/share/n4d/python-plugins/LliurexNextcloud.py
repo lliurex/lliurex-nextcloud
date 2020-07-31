@@ -265,7 +265,7 @@ class LliurexNextcloud:
 			f.close()
 			
 			return tmp_file
-		except:
+		except Exception as e:
 			msg="Processing SQL template.Error: %s"%(str(e))
 			self._debug(msg)
 			return None
