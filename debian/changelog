@@ -1,3 +1,10 @@
+lliurex-nextcloud (0.7.2) bionic; urgency=medium
+
+  * Fixed spanish translation
+  * Added button to show wiki
+
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Mon, 03 Aug 2020 13:17:34 +0200
+
 lliurex-nextcloud (0.7.1) bionic; urgency=medium
 
   * Disabled debug mode
