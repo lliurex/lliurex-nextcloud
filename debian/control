@@ -8,6 +8,6 @@ Homepage: http://lliurex.net
 
 Package: lliurex-nextcloud
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, nextcloud, n4d, python3,python-bcrypt, python-llxnet
+Depends: ${shlibs:Depends}, ${misc:Depends}, nextcloud, n4d, python3,python-bcrypt, python-llxnet, lliurex-sgbd
 Description: Owncloud lliurex configuration
  Scripts and n4d plugins to initialize owncloud
