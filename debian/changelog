@@ -1,3 +1,9 @@
+lliurex-nextcloud (0.7.4) bionic; urgency=medium
+
+  * Fixed help command
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Wed, 23 Dec 2020 16:22:09 +0100
+
 lliurex-nextcloud (0.7.3) bionic; urgency=medium
 
   * Fixed depends: added lliurex-sgbd in control
