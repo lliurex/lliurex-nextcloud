@@ -168,9 +168,19 @@ class NextCloud:
 
 	def get_session_locale(self):
 
+		language=os.environ["LANGUAGE"]
 		lang=os.environ["LANG"]
 
-		if 'ca' in lang:
+		exec_lang=""
+		app_lang=""
+
+		if language=="":
+			app_lang=lang
+		else:
+			language=language.split(":")[0]
+			app_lang=language
+
+		if 'valencia' in app_lang:
 			self.default_locale="ca@valencia"
 		elif 'es' in lang:
 				self.default_locale="es"
@@ -374,10 +384,12 @@ class NextCloud:
 		if "PKEXEC_UID" in os.environ:
 			run_pkexec=True
 		
-		if 'ca-es' in self.default_locale:
-			cmd='xdg-open https://wiki.edu.gva.es/lliurex/tiki-index.php?page=Inicialitzaci%C3%B3-de-Nextcloud'
+		if 'valencia' in self.default_locale:
+			exec_lang="LANG=ca_ES.UTF-8@valencia"
+			cmd=exec_lang+' xdg-open https://wiki.edu.gva.es/lliurex/tiki-index.php?page=Inicialitzaci%C3%B3-de-Nextcloud'
 		else:
-			cmd='xdg-open https://wiki.edu.gva.es/lliurex/tiki-index.php?page=Inicializaci%C3%B3n-de-Nextcloud'
+			exec_lang="LANG=es_ES.UTF-8"
+			cmd=exec_lang+' xdg-open https://wiki.edu.gva.es/lliurex/tiki-index.php?page=Inicializaci%C3%B3n-de-Nextcloud'
 
 		if not run_pkexec:
 			self.help_cmd="su -c '%s' $USER" %cmd
