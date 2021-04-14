@@ -301,9 +301,10 @@ class NextCloud:
 		ip="server"
 		c=client.ServerProxy("https://%s:9779"%ip,context=context,allow_none=True)
 		n4d_key=self.get_n4d_key()
-		self.ret_status,self.ret_msg=c.initialize_nextcloud(n4d_key,"LliurexNextcloud",self.template)
-		
-		
+		ret=c.initialize_nextcloud(n4d_key,"LliurexNextcloud",self.template).get('return',None)
+		self.ret_status=ret[0]
+		self.ret_msg=ret[1]
+				
 		self.executing=False
 		self.progressbar.hide()
 		

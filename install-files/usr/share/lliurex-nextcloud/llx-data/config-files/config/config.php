@@ -1,9 +1,9 @@
 <?php
 $CONFIG = array (
   'updatechecker' => false,
-  'instanceid' => 'ocntcyhrwg8x',
-  'passwordsalt' => 'OmGUcPR4JOXG+Vm8xtOQ85kFIOBE8Y',
-  'secret' => 'cuHNdJpqyGtw6jd5A6KTgUbE64zKCktcUpIndPSHZRZFOC2U',
+  'instanceid' => 'oc43y0z7c3pt',
+  'passwordsalt' => 'SHj5zMDyzW3o3DX+zJzjIEzlPLJkhf',
+  'secret' => 'hcwlx70NYkTKuPfzTYfcTzPG91sZxdAvoQK5c9PwoDjGiOsG',
   'trusted_domains' => 
   array (
     0 => 'server',
@@ -13,7 +13,7 @@ $CONFIG = array (
   ),
   'datadirectory' => '/var/www/nextcloud/data',
   'dbtype' => 'mysql',
-  'version' => '15.0.2.0',
+  'version' => '21.0.1.1',
   'overwrite.cli.url' => 'http://{{ SRV_IP }}/nextcloud',
   'dbname' => '{{ DB_NAME }}',
   'dbhost' => 'localhost',
@@ -26,6 +26,5 @@ $CONFIG = array (
   'ldapIgnoreNamingRules' => false,
   'ldapProviderFactory' => 'OCA\\User_LDAP\\LDAPProviderFactory',
   'forcessl' => true,
-  'theme' => 'lliurex',
   'default_language' => '{{ DEFAULT_LOCALE }}', 
 );

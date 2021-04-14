@@ -1,9 +1,10 @@
 import os
 import bcrypt
 import tempfile
-import ConfigParser
+import configparser
 import shutil
 import lliurex.net
+import n4d.responses
 
 from jinja2 import Environment
 from jinja2.loaders import FileSystemLoader
@@ -12,12 +13,9 @@ from jinja2 import Template
 
 class LliurexNextcloud:
 	
-	ORIG_VERSION="15.0.2"
-	UPDATE_VERSION="19.0.1"
 	BASE_DIR="/usr/share/lliurex-nextcloud/"
 	NEXTCLOUD_BASE_DIR=BASE_DIR+"llx-data/"
 	NEXTCLOUD_BASE_CONFIG_DIR=NEXTCLOUD_BASE_DIR+"config-files/"
-	NEXTCLOUD_BASE_CONFIG_DIR19=NEXTCLOUD_BASE_DIR+"config-files19/"
 
 	#HTACCESS=NEXTCLOUD_BASE_CONFIG_DIR+".htaccess"
 	#DIRECTORY=NEXTCLOUD_BASE_CONFIG_DIR+".directory"
@@ -26,7 +24,6 @@ class LliurexNextcloud:
 	CONFIG_DATA=NEXTCLOUD_BASE_DIR+"config/"
 	TEMPLATE_DIR=NEXTCLOUD_BASE_DIR+""
 	SQL_TEMPLATE="nextcloud.sql"
-	SQL_TEMPLATE_19="nextcloud19.sql"
 	EASY_SITE_FILES=NEXTCLOUD_BASE_DIR+"easy-sites/"
 	EASY_SITE=EASY_SITE_FILES+"nextcloud.json"
 	EASY_SITE_ICON=EASY_SITE_FILES+"nextcloud.svg"
@@ -52,7 +49,7 @@ class LliurexNextcloud:
 	'''
 	def __init__(self):
 	
-		self.dbg=0
+		self.dbg=1
 		self.template=None
 		self.template_vars=["DB_USER","DB_PWD","DB_NAME","ADMIN_USER","ADMIN_PWD","DEFAULT_LOCALE"]
 		
@@ -73,7 +70,7 @@ class LliurexNextcloud:
 		
 		print("* Parsing template...")
 
-		config = ConfigParser.ConfigParser()
+		config = configparser.ConfigParser()
 		config.optionxform=str
 		config.read(template_path)
 		
@@ -121,16 +118,18 @@ class LliurexNextcloud:
 				self.template["EXTERNAL_IP"]=lliurex.net.get_ip(objects["VariablesManager"].get_variable("EXTERNAL_INTERFACE"))
 				
 			except:
-				import xmlrpclib as x
+				import xmlrpc.client as x
+				import ssl
+				context=ssl._create_unverified_context()
 				
-				c=x.ServerProxy("https://server:9779")
-				self.template["LDAP_BASE_USER_TREE"]="ou=People,"+c.get_variable("","VariablesManager","LDAP_BASE_DN")
-				self.template["LDAP_BASE_GROUP_TREE"]="ou=Groups,"+c.get_variable("","VariablesManager","LDAP_BASE_DN")
-				self.template["SRV_IP"]=c.get_variable("","VariablesManager","SRV_IP")
+				c=x.ServerProxy("https://server:9779",context=context,allow_none=True)
+				self.template["LDAP_BASE_USER_TREE"]="ou=People,"+c.get_variable("LDAP_BASE_DN").get('return',None)
+				self.template["LDAP_BASE_GROUP_TREE"]="ou=Groups,"+c.get_variable("LDAP_BASE_DN").get('return',None)
+				self.template["SRV_IP"]=c.get_variable("SRV_IP").get('return',None)
 				self.template["INTERNAL_DOMAIN"]=c.get_variable("","VariablesManager","INTERNAL_DOMAIN")
-				self.template["EXTERNAL_IP"]=lliurex.net.get_ip(c.get_variable("","VariablesManager","EXTERNAL_INTERFACE"))
+				self.template["EXTERNAL_IP"]=lliurex.net.get_ip(c.get_variable("EXTERNAL_INTERFACE").get('return',None))
 
-			self.template["ADMIN_PWD"]=self.create_password_bhash(self.template["ADMIN_PWD"])
+			self.template["ADMIN_PWD"]=self.create_password_bhash(self.template["ADMIN_PWD"].encode('utf-8')).decode()
 			
 		except Exception as e:
 			msg="Loading Template.Error: %s"%str(e)
@@ -140,33 +139,6 @@ class LliurexNextcloud:
 		return [True,""]
 		
 	#def load_template
-	
-	def get_nextcloud_version(self):
-
-		print("* Obtaining the Nextcloud version to initialize...")
-
-		try:
-			file="/var/www/nextcloud/version.php"
-			if os.path.exists(file):
-				with open(file, "r") as in_file:
-					buf=in_file.readlines()
-
-					for line in buf:
-						if '$OC_VersionString' in line:
-							if LliurexNextcloud.ORIG_VERSION in line:
-								self.nextcloud_version='15'
-								break
-							elif LliurexNextcloud.UPDATE_VERSION  in line:
-								self.nextcloud_version='19'
-								break
-		except Exception as e:
-			msg="Obtaining the Nextcloud version.Error: %s"%str(e)
-			self._debug(msg)
-			return [False,""]						
-
-		return [True,""]	
-	#def get_nextcloud_version	
-
 	
 	def mysql_service_init(self):
 		
@@ -250,14 +222,11 @@ class LliurexNextcloud:
 		print("* Procesing SQL template...")
 		try:
 			template_dir=LliurexNextcloud.TEMPLATE_DIR
-			if self.nextcloud_version=='15':
-				sql_template_file=LliurexNextcloud.SQL_TEMPLATE
-			else:
-				sql_template_file=LliurexNextcloud.SQL_TEMPLATE_19
+			sql_template_file=LliurexNextcloud.SQL_TEMPLATE
 	
 			tpl_env = Environment(loader=FileSystemLoader(template_dir))
 			sql_template = tpl_env.get_template(sql_template_file)
-			content = sql_template.render(self.template).encode('UTF-8')
+			content = sql_template.render(self.template)
 
 			tmp_file=tempfile.mktemp()
 			f=open(tmp_file,"w")
@@ -295,14 +264,9 @@ class LliurexNextcloud:
 		print("* Copying new NextCloud data...")
 		
 		try:
-			if self.nextcloud_version=='15':
-				cmd="cp -r %s/* %s"%(LliurexNextcloud.NEXTCLOUD_BASE_CONFIG_DIR,"/var/www/nextcloud/")
-			else:
-				cmd="cp -r %s/* %s"%(LliurexNextcloud.NEXTCLOUD_BASE_CONFIG_DIR19,"/var/www/nextcloud/")
-
+			cmd="cp -r %s/* %s"%(LliurexNextcloud.NEXTCLOUD_BASE_CONFIG_DIR,"/var/www/nextcloud/")
 			os.system(cmd)
 			
-		
 			for dir in [LliurexNextcloud.NEXTCLOUD_DATA_DIR,LliurexNextcloud.NEXTCLOUD_CONFIG_DIR]:
 				if os.path.exists(dir):
 					os.system("chown -R www-data:www-data %s"%dir)
@@ -337,7 +301,7 @@ class LliurexNextcloud:
 			
 			tpl_env = Environment(loader=FileSystemLoader(template_dir))
 			template = tpl_env.get_template(template_file)
-			content = template.render(self.template).encode('UTF-8')
+			content = template.render(self.template)
 			
 			f=open(template_dir+template_file,"w")
 			f.write(content)
@@ -391,13 +355,17 @@ class LliurexNextcloud:
 		f=open("/etc/n4d/key","r")
 		magic_key=f.readline().strip("\n")
 		f.close()
-		import xmlrpclib as x
-		c=x.ServerProxy("https://server:9779")
-		result = c.set_internal_dns_entry(magic_key,"Dnsmasq","nextcloud")
-		if result['status'] == True:
+		import xmlrpc.client as client
+		import ssl
+		context=ssl._create_unverified_context()
+		c=client.ServerProxy("https://server:9779",context=context,allow_none=True)
+		result = c.set_internal_dns_entry(magic_key,"DnsmasqManager","nextcloud")
+		if result['status'] == 0:
 			os.system("service dnsmasq restart")
 			return [True,""]
 		else:
+			msg="Enabling Nextcloud cname.Error: %s"%(str(result['msg']))
+			self._debug(msg)
 			return [False,result['msg']]
 		
 		
@@ -424,52 +392,48 @@ class LliurexNextcloud:
 
 			status,ret=self.load_template(template)
 			if not status:
-				return [False,"1"]
-
-			status,ret=self.get_nextcloud_version()
-			if not status:
-				return [False,"2"]
+				return n4d.responses.build_successful_call_response([False,"1"])
 
 			status,ret=self.mysql_service_init()
 			if not status:
-				return [False,"3"]
+				return n4d.responses.build_successful_call_response([False,"3"])
 
 			status,ret=self.create_db_user()
 			if not status:
-				return [False,"4"]
+				return n4d.responses.build_successful_call_response([False,"4"])
 
 			status,ret=self.create_db()
 			if not status:
-				return [False,"5"]
+				return n4d.responses.build_successful_call_response([False,"5"])
 
 			status,ret=self.clean_old_files()
 			if not status:
-				return [False,"6"]
+				return n4d.responses.build_successful_call_response([False,"6"])
 
 			status,ret=self.copy_new_files()
 			if not status:
-				return [False,"7"]
+				return n4d.responses.build_successful_call_response([False,"7"])
 
 			status,ret=self.process_config_file()
 			if not status:
-				return [False,"8"]
+				return n4d.responses.build_successful_call_response([False,"8"])
 
 			status,ret=self.enable_easy_site()
 			if not status:
-				return [False,"9"]
+				return n4d.responses.build_successful_call_response([False,"9"])
 			
 			status,ret=self.enable_cname()
 			if not status:
-				return [False,"10"]
+				return n4d.responses.build_successful_call_response([False,"10"])
 				
 			self.enable_apache_conf()
 				
-			return [True,"SUCCESS"]
+			return n4d.responses.build_successful_call_response([True,"SUCCESS"])
 			
 		except Exception as e:
 			msg="Error in NextCloud setup process: %s"%(str(e))
 			self._debug(msg)
-			return [False,"?"]
+			return n4d.responses.build_successful_call_response([False,"?"])
 		
 	#def initlializ_owncloud
 	
@@ -480,7 +444,6 @@ if __name__=="__main__":
 	
 	lo=LliurexNextcloud()
 	lo.parse_template("/home/netadmin/nextcloud.ini")
-	lo.get_nextcloud_version()
 	lo.mysql_service_init()
 	lo.create_db_user()
 	lo.create_db()

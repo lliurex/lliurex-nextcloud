@@ -1,0 +1,15 @@
+{
+	"SETUP":{
+		"type":"python",
+		"path":"LliurexNextcloud.py",
+		"class":"LliurexNextcloud"
+	},	
+	"METHODS":{
+		"initialize_nextcloud":{
+			"allowed_groups":[
+				"sudo",
+				"admins"
+			]
+		}
+	}
+}
