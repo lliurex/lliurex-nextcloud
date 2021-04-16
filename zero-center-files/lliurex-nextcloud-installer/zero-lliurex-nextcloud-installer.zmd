@@ -1,0 +1,7 @@
+#!/bin/bash
+
+epi-gtk /usr/share/zero-lliurex-nextcloud-installer/lliurex-nextcloud.epi
+
+exit 0
+
+

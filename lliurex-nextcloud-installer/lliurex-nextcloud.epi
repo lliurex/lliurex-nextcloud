@@ -1,0 +1,13 @@
+ 
+{
+ 
+	"type":"apt",
+	"pkg_list": [{"name":"lliurex-nextcloud","custom_icon":"lliurex-nextcloud.png","custom_name":"Lliurex-Nextcloud: install Nextcloud and setup tool"}], 
+	"script": {"name":"/usr/share/zero-lliurex-nextcloud-installer/lliurex-nextcloud_script","remove":true},
+	"custom_icon_path":"/usr/share/zero-lliurex-nextcloud-installer/",
+	"required_x":true,
+	"zomando":"zero-lliurex-nextcloud-installer"
+	
+	
+}
+ 

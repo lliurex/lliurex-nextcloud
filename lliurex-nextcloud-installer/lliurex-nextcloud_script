@@ -1,0 +1,82 @@
+#!/bin/bash
+
+
+ACTION="$1"
+
+
+DNSMASQ_CONFDIR="/var/lib/dnsmasq/config"
+APACHE_CONFDIR="/etc/apache2/sites-available"
+EASY_SITES_DIR="/var/lib/lliurex-www/links"
+EASY_SITES_DIR_ICON="/usr/share/lliurex-www/srv/icons"
+
+shift
+
+PACKAGE_LIST=$@
+
+
+
+case $ACTION in
+
+		postInstall)
+
+			echo "Now lliurex-nextcloud-setup will be launched to finish configuring Nextcloud..."
+
+			exec /usr/sbin/lliurex-netxcloud-setup &
+
+			echo "You can close EPI-GTK window"
+		
+			echo "**** Finished ****"
+		;;
+
+		
+		remove)
+
+			if [ -f "$DNSMASQ_CONFDIR/nextcloud" ];then
+				echo "Removing dns..."
+				rm -f $DNSMASQ_CONFDIR/nextcloud
+				systemctl restart dnsmasq || true
+			fi	
+
+			if [ -f "$APACHE_CONFDIR/nextcloud.conf" ];then
+           		 echo "Dissabling  http server configuration..."
+           		 a2dissite nextcloud
+           		 systemctl restart apache2 || true
+        	fi
+
+        	if [ -f "$EASY_SITES_DIR/nextcloud.json" ];then
+        		echo "Removing easy-sites files..."
+        		rm -f $EASY_SITES_DIR/nextcloud.json
+        		
+        		if [ -f "$EASY_SITES_DIR_ICON/nextcloud.svg" ];then
+        			rm -f $EASY_SITES_DIR_ICON/nextcloud.svg
+        		fi
+        	fi
+
+           	zero-center set-non-configured zero-lliurex-nextcloud-setup || true
+        	
+        	echo "Removing packages..."
+
+            for ix in $PACKAGE_LIST	
+
+			do
+                apt-get remove -y $ix
+				TEST=$( dpkg-query -s  $ix 2> /dev/null| grep Status | cut -d " " -f 4 )
+				if [ "$TEST" == 'installed' ];then
+					exit 1
+				fi
+			done
+
+			apt-get remove -y nextcloud
+			TEST=$( dpkg-query -s  nextcloud 2> /dev/null| grep Status | cut -d " " -f 4 )
+			if [ "$TEST" == 'installed' ];then
+				exit 1
+			fi
+			
+			
+			echo "**** Finished ****"
+        	
+		;;
+
+esac
+
+exit 0

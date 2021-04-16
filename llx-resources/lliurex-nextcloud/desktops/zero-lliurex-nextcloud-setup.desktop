@@ -1,0 +1,21 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=zero-lliurex-nextcloud-setup
+Name[en]=LliureX Nextcloud Setup
+Name[es]=LliureX Nextcloud Setup
+Name[qcv]=LliureX Nextcloud Setup
+Name[ca_ES@valencia]=LliureX Nextcloud Setup
+ Name[ca_ES.UTF-8@valencia]=LliureX Nextcloud Setup
+Comment=Configures Nextcloud
+Comment[es]=Configura Nextcloud
+Comment[qcv]=Configura Nextcloud
+Comment[ca_ES@valencia]=Configura Nextcloud
+Comment[ca_ES.UTF-8@valencia]=Configura Nextcloud
+Terminal=false
+Exec= pkexec zero-lliurex-nextcloud.zmd
+Icon=zero-lliurex-nextcloud-setup
+Type=Application
+GenericName=zero-lliurex-nextcloud-setup
+NoDisplay=true
+Categories=LliureX-Administration;

@@ -1,0 +1,20 @@
+Name=zero-lliurex-nextcloud-installer
+Name[en]=LliureX Nextcloud Installer
+Name[es]=LliureX Nextcloud Installer
+Name[ca@valencia]=LliureX Nextcloud Installer
+Name[ca_ES@valencia]=LliureX Nextcloud Installer
+Name[ca_ES.utf-8@valencia]=LliureX Nextcloud Installer
+Comment=Wizard to install all the necessary packages to use the Nextcloud
+Comment[es]=Asistente para instalar todos los paquetes necesarios para utilizar Nextcloud
+Comment[ca@valencia]=Assistent per a instal·lar tots els paquets necessaris per a utilitzar el Nextcloud
+Comment[ca_ES@valencia]=Assistent per a instal·lar tots els paquets necessaris per a utilitzar el Nextcloud
+Comment[ca_ES.utf-8@valencia]=Assistent per a instal·lar tots els paquets necessaris per a utilitzar el Nextcloud
+Icon=zero-lliurex-nextcloud-installer
+Groups=admins;sudo
+Category=Services
+ScriptPath=zero-lliurex-nextcloud-installer.zmd
+ReplacedWith=zero-lliurex-nextcloud-setup
+Using=pkexec
+Service=True
+Depends=zero-server-wizard
+
