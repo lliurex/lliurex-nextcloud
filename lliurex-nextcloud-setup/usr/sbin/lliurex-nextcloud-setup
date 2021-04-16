@@ -49,7 +49,7 @@ class NextCloud:
 
 		self.main_window=builder.get_object("main_window")
 		self.main_window.set_title("NextCloud Setup")
-		self.main_window.resize(400,815)
+		self.main_window.resize(400,850)
 		g=Gdk.Geometry()
 		g.min_width=400
 		g.max_width=400
@@ -63,6 +63,7 @@ class NextCloud:
 
 		self.accept_button=builder.get_object("accept_button")
 		self.help_button=builder.get_object("help_button")
+		self.remove_button=builder.get_object("remove_button")
 		self.dbname_entry=builder.get_object("dbname_entry")
 		self.dbuser_entry=builder.get_object("dbuser_entry")
 		self.dbpwd_entry=builder.get_object("dbpwd_entry")
@@ -83,6 +84,9 @@ class NextCloud:
 		self.main_window.connect("destroy",self.exit)
 		self.accept_button.connect("clicked",self.accept_clicked)
 		self.help_button.connect("clicked",self.show_help)
+		self.remove_button.connect("clicked",self.remove_clicked)	
+
+
 		'''
 		self.progress_window=builder.get_object("window2")
 		self.pbar=builder.get_object("progressbar")
@@ -160,8 +164,9 @@ class NextCloud:
 		self.setup_t.daemon=True
 		self.open_help_t=threading.Thread(target=self.open_help)
 		self.open_help_t.daemon=True
+		self.remove_nextcloud_t=threading.Thread(target=self.remove_nextcloud)
+		self.remove_nextcloud_t.daemon=True
 
-		GObject.threads_init()
 
 	#def init_threads
 
@@ -225,21 +230,6 @@ class NextCloud:
 			#self.msg_label.set_markup("<span foreground='red'>"+msg+"</span>")
 			return
 			
-		'''	
-		ip="server"
-		c=xmlrpclib.ServerProxy("https://%s:9779"%ip)
-		n4d_key=self.get_n4d_key()
-		
-		status,ret=c.initialize_owncloud(n4d_key,"LliurexOwncloud",self.template)
-		
-		if status:
-			os.system("zero-center set-configured lliurex-owncloud")
-			self.msg_label.set_markup("<b>"+"Initialization successful"+"</b>")
-			self.accept_button.set_sensitive(False)
-		else:
-			self.msg_label.set_markup("<span foreground='red'>"+ret+"</span>")
-			os.system("zero-center set-failed lliurex-owncloud")
-		'''
 		
 		self.executing=True
 		
@@ -252,12 +242,6 @@ class NextCloud:
 		self.ret_msg=""
 		self.ret_status=False
 		self.init_threads()
-
-		'''
-		t=threading.Thread(target=self.execute,args=())
-		t.daemon=True
-		t.start()
-		'''
 
 		self.setup_t.start()
 		GLib.timeout_add(50,self.pulsate)
@@ -274,7 +258,7 @@ class NextCloud:
 		else:
 			self.options_box.set_sensitive(True)
 			if self.ret_status:
-				os.system("zero-center set-configured lliurex-nextcloud")
+				os.system("zero-center set-configured zero-lliurex-nextcloud-setup")
 				msg_text=self.get_msg("14")
 				self.msg_label.set_text(msg_text)
 
@@ -288,7 +272,7 @@ class NextCloud:
 				'''
 				self.msg_label.set_markup("<span foreground='red'>"+self.ret_msg+"</span>")
 				'''
-				os.system("zero-center set-failed lliurex-nextcloud")		
+				os.system("zero-center set-failed zero-lliurex-nextcloud-setup")		
 
 		return self.executing
 		
@@ -408,6 +392,23 @@ class NextCloud:
 		os.system(self.help_cmd)
 
 	#def open_help	
+
+	def remove_clicked(self,widget):
+
+		self.remove_cmd="epi-gtk /usr/share/zero-lliurex-nextcloud-installer/lliurex-nextcloud.epi"
+
+		self.init_threads()
+		self.remove_nextcloud_t.start()
+		self.exit(widget)
+
+	#def remove_clicked
+	
+	def remove_nextcloud(self):
+
+		os.system(self.remove_cmd)
+
+	#def remove_news	
+
 	
 #class nextcloud
 
