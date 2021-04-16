@@ -8,6 +8,13 @@ Homepage: http://lliurex.net
 
 Package: lliurex-nextcloud
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, nextcloud, n4d, python3,python-bcrypt, python-llxnet, lliurex-sgbd
-Description: Owncloud lliurex configuration
+Depends: ${shlibs:Depends}, ${misc:Depends}, n4d, python3,python3-bcrypt, python3-llxnet, lliurex-sgbd, nextcloud
+Description: Nextcloud lliurex configuration
  Scripts and n4d plugins to initialize owncloud
+
+Package: lliurex-nextcloud-installer
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, zero-center,epi-gtk
+Description: Nextcloud installer files
+ Contains epi and zero-center fles to install nextcloud
+
