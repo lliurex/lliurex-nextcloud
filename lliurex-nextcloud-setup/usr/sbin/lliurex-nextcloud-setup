@@ -237,7 +237,7 @@ class NextCloud:
 		self.options_box.set_sensitive(False)
 		self.progressbar.show()
 		self.msg_label.show()
-		self.msg_label.set_text(_("Initializing NextCloud. Wait a moment..."))
+		self.msg_label.set_text(_("Initializing Nextcloud. Wait a moment..."))
 		
 		self.ret_msg=""
 		self.ret_status=False
