@@ -7,116 +7,116 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 12:17+0200\n"
-"PO-Revision-Date: 2020-06-18 16:13+0200\n"
+"POT-Creation-Date: 2021-04-19 07:59+0200\n"
+"PO-Revision-Date: 2021-04-19 08:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.3\n"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:7
-msgid "Lliurex NextCloud Configuration"
-msgstr "LliureX Nextcloud Configuration"
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:7
+msgid "Nextcloud Configuration"
+msgstr "Nextcloud Configuration"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:110
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:139
 msgid "Database"
 msgstr "Base de dades"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:149
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:178
 msgid "DB Name"
 msgstr "Nombre BDD"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:173
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:202
 msgid "DB User"
 msgstr "Usuari BDD"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:197
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:226
 msgid "DB Password"
 msgstr "Contrasenya BDD"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:222
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:251
 msgid "Repeat DB password"
 msgstr "Repetix la contrasenya de BDD"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:272
-msgid "NextCloud administrator"
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:301
+msgid "Nextcloud administrator"
 msgstr "Administrador de Nextcloud"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:310
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:339
 msgid "User"
 msgstr "Usuari"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:345
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:374
 msgid "Password"
 msgstr "Contrasenya"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:370
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:399
 msgid "Repeat password"
 msgstr "Repetix la contrasenya"
 
-#: /tmp/lliurex-nextcloud.py:229
-msgid "Initializing NextCloud. Wait a moment..."
+#: /tmp/lliurex-nextcloud.py:240
+msgid "Initializing Nextcloud. Wait a moment..."
 msgstr "S'està inicialitzant Nextcloud. Espere un moment..."
 
-#: /tmp/lliurex-nextcloud.py:326
+#: /tmp/lliurex-nextcloud.py:332
 msgid "Error loading or processing template"
 msgstr "Error en carregar o processar la plantilla"
 
-#: /tmp/lliurex-nextcloud.py:328
-msgid "Unable to get NextCloud version"
+#: /tmp/lliurex-nextcloud.py:334
+msgid "Unable to get Nextcloud version"
 msgstr "No és possible determinar la versió de Nextcloud"
 
-#: /tmp/lliurex-nextcloud.py:330
-msgid "Error initializing mysql service"
-msgstr "Error en inicialitzar el servei de mysql"
+#: /tmp/lliurex-nextcloud.py:336
+msgid "Error initializing mariadb service"
+msgstr "Error en inicialitzar el servei de mariadb"
 
-#: /tmp/lliurex-nextcloud.py:332
+#: /tmp/lliurex-nextcloud.py:338
 msgid "Error creating user to database"
 msgstr "Error en crear l'usuari de base de dades"
 
-#: /tmp/lliurex-nextcloud.py:334
+#: /tmp/lliurex-nextcloud.py:340
 msgid "Error creating database"
 msgstr "Error en crear la base de dades"
 
-#: /tmp/lliurex-nextcloud.py:336
+#: /tmp/lliurex-nextcloud.py:342
 msgid "Error cleaning old files"
 msgstr "Error en esborrar els fitxers antics"
 
-#: /tmp/lliurex-nextcloud.py:338
+#: /tmp/lliurex-nextcloud.py:344
 msgid "Error copyng news files"
 msgstr "Error en copiar els nous fitxers"
 
-#: /tmp/lliurex-nextcloud.py:340
+#: /tmp/lliurex-nextcloud.py:346
 msgid "Error processing config file"
 msgstr "Error en processar el fitxer de configuració"
 
-#: /tmp/lliurex-nextcloud.py:342
+#: /tmp/lliurex-nextcloud.py:348
 msgid "Error enabling easy-site"
 msgstr "Error en activar el easy-site"
 
-#: /tmp/lliurex-nextcloud.py:344
-msgid "Error enabling NextCloud cname"
+#: /tmp/lliurex-nextcloud.py:350
+msgid "Error enabling Nextcloud cname"
 msgstr "Error en activar el  cname de Nextcloud"
 
-#: /tmp/lliurex-nextcloud.py:346
-msgid "Error in NextCloud config process"
+#: /tmp/lliurex-nextcloud.py:352
+msgid "Error in Nextcloud config process"
 msgstr "Error en el procés de configuració de Nextcloud"
 
-#: /tmp/lliurex-nextcloud.py:348
+#: /tmp/lliurex-nextcloud.py:354
 msgid "There are empty fields to be completed"
 msgstr "Hi ha camps buits que cal completar"
 
-#: /tmp/lliurex-nextcloud.py:350
+#: /tmp/lliurex-nextcloud.py:356
 msgid "DB Passwords do not match"
 msgstr "Les contrasenyes per a la base de dades no coincideixen"
 
-#: /tmp/lliurex-nextcloud.py:352
+#: /tmp/lliurex-nextcloud.py:358
 msgid "Administrator passwords do not match"
 msgstr "Les contrasenyes per a l'Administrador no coincideixen"
 
-#: /tmp/lliurex-nextcloud.py:354
+#: /tmp/lliurex-nextcloud.py:360
 msgid "Initialization successful"
 msgstr "Inicialització satisfactòria"

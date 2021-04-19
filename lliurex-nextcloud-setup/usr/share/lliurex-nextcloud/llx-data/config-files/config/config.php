@@ -27,4 +27,7 @@ $CONFIG = array (
   'ldapProviderFactory' => 'OCA\\User_LDAP\\LDAPProviderFactory',
   'forcessl' => true,
   'default_language' => '{{ DEFAULT_LOCALE }}', 
+  'default_locale'=>'es_ES',
+  'default_phone_region' => 'ES',
+
 );

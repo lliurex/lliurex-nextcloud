@@ -48,7 +48,7 @@ class NextCloud:
 		self.stack_window.set_margin_bottom(0)
 
 		self.main_window=builder.get_object("main_window")
-		self.main_window.set_title("NextCloud Setup")
+		self.main_window.set_title("Nextcloud Setup")
 		self.main_window.resize(400,850)
 		g=Gdk.Geometry()
 		g.min_width=400
@@ -237,7 +237,7 @@ class NextCloud:
 		self.options_box.set_sensitive(False)
 		self.progressbar.show()
 		self.msg_label.show()
-		self.msg_label.set_text(_("Initializing NextCloud. Wait a moment..."))
+		self.msg_label.set_text(_("Initializing Nextcloud. Wait a moment..."))
 		
 		self.ret_msg=""
 		self.ret_status=False
@@ -331,9 +331,9 @@ class NextCloud:
 		if code=="1":
 			msg=_("Error loading or processing template")
 		elif code=="2":
-			msg=_("Unable to get NextCloud version")
+			msg=_("Unable to get Nextcloud version")
 		elif code=="3":
-			msg=_("Error initializing mysql service")
+			msg=_("Error initializing mariadb service")
 		elif code=="4":
 			msg=_("Error creating user to database")
 		elif code=="5":
@@ -347,9 +347,9 @@ class NextCloud:
 		elif code=="9":
 			msg=_("Error enabling easy-site")
 		elif code=="10":
-			msg=_("Error enabling NextCloud cname")
+			msg=_("Error enabling Nextcloud cname")
 		elif code=="?":
-			msg=_("Error in NextCloud config process")
+			msg=_("Error in Nextcloud config process")
 		elif code=="11":
 			msg=_("There are empty fields to be completed")	
 		elif code=="12":

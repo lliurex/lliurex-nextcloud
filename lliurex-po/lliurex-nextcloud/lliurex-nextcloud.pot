@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 12:17+0200\n"
+"POT-Creation-Date: 2021-04-19 07:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,106 +17,106 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:7
-msgid "Lliurex NextCloud Configuration"
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:7
+msgid "Nextcloud Configuration"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:110
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:139
 msgid "Database"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:149
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:178
 msgid "DB Name"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:173
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:202
 msgid "DB User"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:197
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:226
 msgid "DB Password"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:222
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:251
 msgid "Repeat DB password"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:272
-msgid "NextCloud administrator"
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:301
+msgid "Nextcloud administrator"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:310
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:339
 msgid "User"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:345
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:374
 msgid "Password"
 msgstr ""
 
-#: ../install-files/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:370
+#: ../lliurex-nextcloud-setup/usr/share/lliurex-nextcloud/rsrc/lliurex-nextcloud-setup.ui:399
 msgid "Repeat password"
 msgstr ""
 
-#: /tmp/lliurex-nextcloud.py:229
-msgid "Initializing NextCloud. Wait a moment..."
-msgstr ""
-
-#: /tmp/lliurex-nextcloud.py:326
-msgid "Error loading or processing template"
-msgstr ""
-
-#: /tmp/lliurex-nextcloud.py:328
-msgid "Unable to get NextCloud version"
-msgstr ""
-
-#: /tmp/lliurex-nextcloud.py:330
-msgid "Error initializing mysql service"
+#: /tmp/lliurex-nextcloud.py:240
+msgid "Initializing Nextcloud. Wait a moment..."
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:332
-msgid "Error creating user to database"
+msgid "Error loading or processing template"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:334
-msgid "Error creating database"
+msgid "Unable to get Nextcloud version"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:336
-msgid "Error cleaning old files"
+msgid "Error initializing mariadb service"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:338
-msgid "Error copyng news files"
+msgid "Error creating user to database"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:340
-msgid "Error processing config file"
+msgid "Error creating database"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:342
-msgid "Error enabling easy-site"
+msgid "Error cleaning old files"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:344
-msgid "Error enabling NextCloud cname"
+msgid "Error copyng news files"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:346
-msgid "Error in NextCloud config process"
+msgid "Error processing config file"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:348
-msgid "There are empty fields to be completed"
+msgid "Error enabling easy-site"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:350
-msgid "DB Passwords do not match"
+msgid "Error enabling Nextcloud cname"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:352
-msgid "Administrator passwords do not match"
+msgid "Error in Nextcloud config process"
 msgstr ""
 
 #: /tmp/lliurex-nextcloud.py:354
+msgid "There are empty fields to be completed"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:356
+msgid "DB Passwords do not match"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:358
+msgid "Administrator passwords do not match"
+msgstr ""
+
+#: /tmp/lliurex-nextcloud.py:360
 msgid "Initialization successful"
 msgstr ""
