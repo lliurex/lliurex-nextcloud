@@ -1,3 +1,10 @@
+lliurex-nextcloud (0.17.4) focal; urgency=medium
+
+  * Initial release for focal
+  * Changes to support setup  Nextcloud 21.0.1
+
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Mon, 19 Apr 2021 09:44:05 +0200
+
 lliurex-nextcloud (0.7.4) bionic; urgency=medium
 
   * Fixed help command
