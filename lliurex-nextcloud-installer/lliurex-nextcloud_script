@@ -21,7 +21,7 @@ case $ACTION in
 
 			echo "Now lliurex-nextcloud-setup will be launched to finish configuring Nextcloud..."
 
-			exec /usr/sbin/lliurex-netxcloud-setup &
+			exec /usr/sbin/lliurex-nextcloud-setup &
 
 			echo "You can close EPI-GTK window"
 		
