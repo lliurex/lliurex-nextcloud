@@ -1,3 +1,9 @@
+lliurex-nextcloud (0.17.5) focal; urgency=medium
+
+  * Fixed script for epi file
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Mon, 19 Apr 2021 12:16:17 +0200
+
 lliurex-nextcloud (0.17.4) focal; urgency=medium
 
   * Initial release for focal
